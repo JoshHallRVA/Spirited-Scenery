@@ -119,7 +119,16 @@
 				<li><a href="#">Four</a></li>
 			</ul>
 		</div>
-	
+	<script>
+		function initMap(){
+				var options = {
+					zoom: 8,
+					center: {lat:37.5407,lng:-77.4360}
+				}
+				var map = new google.maps.Map(document.getElementById('map'), options);
+			}
+
+	</script>
 		<script async defer
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB95I6REqU48J9h67-oxSaG636Lk69UhFY&callback=initMap">
 	  </script>
