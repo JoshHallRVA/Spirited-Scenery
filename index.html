@@ -29,14 +29,6 @@
         <a href="#" class="button large hollow">Search for Bars</a>
       </div>
     </div>
-		<div class="callout large">
-			<div class="row column text-center">
-				<h1>Welcome to Spirited Scenery!!</h1>
-				<p class="lead">Have a pint and look at paint!</p>
-				<a href="#" class="button large">Search for Murals</a>
-				<a href="#" class="button large hollow">Search for Bars</a>
-			</div>
-		</div>
 
 
     <section>
@@ -121,79 +113,8 @@
           />
         </div>
       </div>
-    </section>
     <hr />
-
-    <script
-      async
-      defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB95I6REqU48J9h67-oxSaG636Lk69UhFY&callback=initMap"
-    ></script>
-
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
-    <script>
-      $(document).foundation();
-    </script>
-    <script defer src="assets/script.js"></script>
-  </body>
-
-		<div class="row medium-up-3 large-up-4">
-			<div class="column">
-				<img class="thumbnail" src="assets/img/external-content.duckduckgo-2.jpg" />
-			</div>
-			<div class="column">
-				<img class="thumbnail" src="assets/img/external-content.duckduckgo-1.jpg" />
-			</div>
-			<div class="column">
-				<img class="thumbnail" src="assets/img/external-content.duckduckgo.jpg" />
-			</div>
-			<div class="column">
-				<img class="thumbnail" src="assets/img/o-ART-900.jpg" />
-			</div>
-			<div class="column">
-				<img class="thumbnail" src="assets/img/o-BERLIN-STREET-ART-900.jpg" />
-			</div>
-			<div class="column">
-				<img class="thumbnail" src="assets/img/o-BOGOTA-STREET-ART-900.jpg" />
-			</div>
-			<div class="column">
-				<img class="thumbnail" src="assets/img/o-LISBON-STREET-ART-900.jpg" />
-			</div>
-			<div class="column">
-				<img class="thumbnail" src="assets/img/o-LONDON-STREET-ART-900.jpg" />
-			</div>
-			<div class="column">
-				<img class="thumbnail" src="assets/img/o-MELBOURNE-STREET-ART-900.jpg" />
-			</div>
-			<div class="column">
-				<img class="thumbnail" src="assets/img/o-SANTIAGO-GRAFFITI-900.jpg" />
-			</div>
-			<div class="column">
-				<img class="thumbnail" src="assets/img/o-STREET-ART-CANADA-900.jpg" />
-			</div>
-			<div class="column">
-				<img class="thumbnail" src="assets/img/external-content.duckduckgo.jpg" />
-			</div>
-		</div>
-
-		<hr />
-
-	<script>
-
-		//
-		// function initMap(){
-		// 		var options = {
-		// 			zoom: 8,
-		// 			center: {lat:37.5407,lng:-77.4360}
-		// 		}
-		// 		var map = new google.maps.Map(document.getElementById('map'), options);
-		// 	}
-
-
-
-
-
+<script>
             function showLocation(position) {
                 latitude = position.coords.latitude;
                 longitude = position.coords.longitude;
@@ -206,10 +127,7 @@
 
 
 				var map = new google.maps.Map(document.getElementById('map'), options);
-
-
-
-            }
+       }
             function errorHandler(err) {
                 if (err.code == 1) {
                     alert("Error: Access is denied!");
@@ -230,17 +148,6 @@
 
         </script>
 
-
-
-
-
-		function addMarker(coords){
-			var marker = new google.maps.marker({
-				position:coords,
-				map:map,
-				icon: "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png"});
-			}
-		}
 
 	</script>
 		<script async defer
