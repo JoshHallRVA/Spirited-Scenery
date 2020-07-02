@@ -166,6 +166,14 @@
 
 
 
+		function addMarker(coords){
+			var marker = new google.maps.marker({
+				position:coords,
+				map:map,
+				icon: "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png"});
+			}
+		}
+
 	</script>
 		<script async defer
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB95I6REqU48J9h67-oxSaG636Lk69UhFY&callback=initMap">
