@@ -59,7 +59,7 @@
 
 		<div class="row">
 			<div class="medium-4 columns">
-			
+
 		</div>
 
 		<hr />
@@ -112,15 +112,59 @@
 		<hr />
 
 	<script>
-		function initMap(){
-			//Map options
+
+		//
+		// function initMap(){
+		// 		var options = {
+		// 			zoom: 8,
+		// 			center: {lat:37.5407,lng:-77.4360}
+		// 		}
+		// 		var map = new google.maps.Map(document.getElementById('map'), options);
+		// 	}
+
+
+
+
+
+            function showLocation(position) {
+                latitude = position.coords.latitude;
+                longitude = position.coords.longitude;
+                var latlongvalue = position.coords.latitude + "," + position.coords.longitude;
+
 				var options = {
-					zoom: 10,
-					center: {lat:37.5407,lng:-77.4360}
+					zoom: 8,
+					center: {lat:latitude,lng:longitude}
 				}
-				//NEw Map
+
+
 				var map = new google.maps.Map(document.getElementById('map'), options);
+
+
+
+            }
+            function errorHandler(err) {
+                if (err.code == 1) {
+                    alert("Error: Access is denied!");
+                } else if (err.code == 2) {
+                    alert("Error: Position is unavailable!");
+                }
+            }
+            function getLocation() {
+                if (navigator.geolocation) {
+                    // timeout at 60000 milliseconds (60 seconds)
+                    var options = { timeout: 60000 };
+                    navigator.geolocation.getCurrentPosition(showLocation, errorHandler, options);
+                } else {
+                    alert("Sorry, browser does not support geolocation!");
+                }
 			}
+			getLocation();
+
+        </script>
+
+
+
+
 
 		function addMarker(coords){
 			var marker = new google.maps.marker({
@@ -134,7 +178,7 @@
 		<script async defer
 		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB95I6REqU48J9h67-oxSaG636Lk69UhFY&callback=initMap">
 	  </script>
-			
+
 		<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 		<script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
 		<script>
