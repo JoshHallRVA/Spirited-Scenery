@@ -1,13 +1,45 @@
-var imageURLs = [
-	"https://images.app.goo.gl/33vcPeawt5Azaxgk6",
-	"https://images.app.goo.gl/rJpA6X9tE8jEcyY17",
-	"https://images.app.goo.gl/78JunC2Rw8CPkvnJ9",
-	"https://images.app.goo.gl/nLeaADWEs8fcJ8wGA",
-];
-function getImageTag() {
-	var img = '<img src="';
-	var randomIndex = Math.floor(Math.random() * imageURLs.length);
-	img += imageURLs[randomIndex];
-	img += '" alt="Some alt text"/>';
-	return img;
+var image_track = "f";
+
+$(document).ready(function () {
+	$("#muralpc").fadeIn(3000);
+});
+
+function change() {
+	var image = document.getElementById("muralpc");
+	if (image_track == "f") {
+		image.src = "assets/img/2.png";
+		image_track = "2";
+	} else if (image_track == "2") {
+		image.src = "assets/img/3.jpg";
+		image_track = "3";
+	} else if (image_track == "3") {
+		image.src = "assets/img/4.jpg";
+		image_track = "4";
+	} else if (image_track == "4") {
+		image.src = "assets/img/5.jpg";
+		image_track = "5";
+	} else if (image_track == "5") {
+		image.src = "assets/img/6.jpg";
+		image_track = "6";
+	} else if (image_track == "6") {
+		image.src = "assets/img/7.jpg";
+		image_track = "7";
+	} else if (image_track == "7") {
+		image.src = "assets/img/8.jpg";
+		image_track = "8";
+	} else if (image_track == "8") {
+		image.src = "assets/img/9.jpg";
+		image_track = "9";
+	} else if (image_track == "9") {
+		image.src = "assets/img/10.jpg";
+		image_track = "10";
+	} else if (image_track == "10") {
+		image.src = "assets/img/11.jpg";
+		image_track = "11";
+	} else if (image_track == "11") {
+		image.src = "assets/img/12.jpg";
+		image_track = "f";
+	} else if (image_track == "f") {
+		change();
+	}
 }
