@@ -25,8 +25,10 @@
     <div class="callout large">
       <div class="row column text-center">
         <p class="lead">Have a pint and look at paint!</p>
-        <a href="#muralBtn" class="button large">Search for Murals</a>
-        <a href="#barBtn" class="button large hollow">Search for Bars</a>
+
+        <a href="#muralBtn";
+           id="clickart" class="button large">Search for Murals</a>       <a  href="#barBtn" id="clickbars" class="button large hollow">Search for Bars</a>
+
       </div>
     </div>
 
@@ -57,48 +59,17 @@
         <div class="column">
           <img src="assets/img/1.jpg" alt="mural"  id = "muralpc" onclick="change();">
         </div>
-        
+
       </div>
     <hr />
-<script>
-            function showLocation(position) {
-                latitude = position.coords.latitude;
-                longitude = position.coords.longitude;
-                var latlongvalue = position.coords.latitude + "," + position.coords.longitude;
 
-				var options = {
-					zoom: 8,
-					center: {lat:latitude,lng:longitude}
-				}
+    <script src="assets/location.js"></script>
 
-
-				var map = new google.maps.Map(document.getElementById('map'), options);
-       }
-            function errorHandler(err) {
-                if (err.code == 1) {
-                    alert("Error: Access is denied!");
-                } else if (err.code == 2) {
-                    alert("Error: Position is unavailable!");
-                }
-            }
-            function getLocation() {
-                if (navigator.geolocation) {
-                    // timeout at 60000 milliseconds (60 seconds)
-                    var options = { timeout: 60000 };
-                    navigator.geolocation.getCurrentPosition(showLocation, errorHandler, options);
-                } else {
-                    alert("Sorry, browser does not support geolocation!");
-                }
-			}
-			getLocation();
-
-        </script>
-
-
-	</script>
-		<script async defer
-		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB95I6REqU48J9h67-oxSaG636Lk69UhFY&callback=initMap">
-	  </script>
+  <script
+      async
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBw9MPLnSY9dmcrcKbTqEl6N26JSt-cOC8&libraries=places&callback=initMap"
+  ></script>
 
 		<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 		<script src="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.js"></script>
