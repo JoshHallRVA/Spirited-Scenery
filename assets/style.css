@@ -99,7 +99,8 @@ section {
 #map {
     height: 400px;
     width: 100%;
-    border: 1px;
+    border: 1px solid black;
+    color: black;
 }
 
 #mbutton {
