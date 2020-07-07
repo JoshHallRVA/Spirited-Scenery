@@ -38,6 +38,7 @@ h1.post-title {
   text-align: center;
   padding: 1em 2em;
   margin: 2em auto 3em;
+  font-family: 'Bangers', cursive;
 
 }
 
@@ -88,6 +89,7 @@ h1.post-title {
 
 .lead {
   color: #2199e8;
+  
 }
 
 section {
@@ -110,12 +112,14 @@ section {
 .medium-6 {
 
   color: white;
+  
 }
 
 h2 {
   text-align: center;
-
+  font-family: 'Bangers';
     color: white;
+    text-shadow: 2px 2px 4px #000000;
 
 }
 
@@ -148,4 +152,8 @@ h2 {
   .thumbnail {
     object-fit: cover;
 
+}
+
+#txtt {
+  font-family: 'Bangers';
 }
