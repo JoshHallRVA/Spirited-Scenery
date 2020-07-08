@@ -1,7 +1,9 @@
 var image_track = "f";
 
 $(document).ready(function () {
-	$("#muralpc").fadeIn(3000);
+	$("#flip").click(function () {
+		$("#muralpc").slideDown("slow");
+	});
 });
 
 function change() {
