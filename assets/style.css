@@ -92,6 +92,10 @@ h1.post-title {
   
 }
 
+.callout {
+  margin: auto;
+}
+
 section {
 
   background-color: #2199e8;
