@@ -61,8 +61,10 @@ function initMap() {
 
                 var realTemp = Math.floor((weather.temp * 9) / 5 - 459.67);
 
+                var desc = weather.desc[0].toUpperCase() + weather.desc.slice(1).toLowerCase();
+
                 $("#temp").text("Current Temperature - " + realTemp + " F");
-                $("#conditions").text("Current Conditions - " + weather.desc);
+                $("#conditions").text("Current Conditions - " + desc);
             }
 
             getCurWeather();
