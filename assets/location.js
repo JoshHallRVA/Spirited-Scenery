@@ -40,6 +40,32 @@ function initMap() {
                 map.setCenter(pos);
             })
     }
+    var queryURL =
+    "https://api.openweathermap.org/data/2.5/weather?lat=30&lon=-37&appid=a076bb4dbcd9082faae450a5cea191f6";
+
+
+    function go() {
+        $.ajax({ url: queryURL, method: "GET" }).then(function (response) {
+            console.log(response);
+
+            var weatherObj = {
+                temp: response.main.temp,
+                desc: response.weather[0].description,
+            };
+            drawCurWeather(weatherObj);
+        });
+    }
+
+    function drawCurWeather(weather) {
+        console.log(weather);
+
+        var realTemp = Math.floor((weather.temp * 9) / 5 - 459.67);
+
+        $("#temp").text("Temp: " + realTemp + " F");
+        $("#conditions").text("Current Conditions: " + weather.desc);
+    }
+
+    go();
 
     document.getElementById("clickbars").addEventListener("click", function () {
 
