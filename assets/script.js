@@ -1,10 +1,24 @@
-var image_track = "f";
-
 $(document).ready(function () {
 	$("#flip").click(function () {
-		$("#muralpc").slideDown("slow");
+		$("#muralpc").css("visibility", "visible").hide().fadeIn("slow");
 	});
 });
+
+$(window).scroll(function () {
+	console.log($(window).scrollTop());
+	var topDivHeight = $("#sec").height();
+	var viewPortSize = $(window).height();
+
+	var triggerAt = 150;
+	var triggerHeight = topDivHeight - viewPortSize + triggerAt;
+
+	if ($(window).scrollTop() >= triggerHeight) {
+		$("#sec").css("visibility", "visible").hide().fadeIn();
+		$(this).off("scroll");
+	}
+});
+
+var image_track = "f";
 
 function change() {
 	var image = document.getElementById("muralpc");

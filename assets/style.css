@@ -2,6 +2,9 @@
 	font-family: "Playfair Display", serif;
 	box-sizing: border-box;
 }
+#sec {
+	visibility: hidden;
+}
 
 html {
 	height: 0;
@@ -88,7 +91,7 @@ h1.post-title {
 }
 
 .callout {
-  margin: auto;
+	margin: auto;
 }
 
 section {
@@ -139,7 +142,7 @@ h2 {
 }
 #muralpc {
 	width: 100%;
-	display: none;
+	visibility: hidden;
 }
 
 #txtt {
