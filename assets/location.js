@@ -9,10 +9,7 @@ let currentInfoWindow;
 let service;
 let infoPane;
 
-
 function initMap() {
-
-
     // Initialize variables
     bounds = new google.maps.LatLngBounds();
     infoWindow = new google.maps.InfoWindow();
@@ -22,53 +19,59 @@ function initMap() {
 
     // Try HTML5 geolocation
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(
-            (position) => {
-                pos = {
-                    lat: position.coords.latitude,
-                    lng: position.coords.longitude,
-                };
-                map = new google.maps.Map(document.getElementById("map"), {
-                    center: pos,
-                    zoom: 15,
-                });
-                bounds.extend(pos);
-
-                infoWindow.setPosition(pos);
-                infoWindow.setContent("Current Location");
-                infoWindow.open(map);
-                map.setCenter(pos);
-            })
-    }
-    var queryURL =
-    "https://api.openweathermap.org/data/2.5/weather?lat=30&lon=-37&appid=a076bb4dbcd9082faae450a5cea191f6";
-
-
-    function go() {
-        $.ajax({ url: queryURL, method: "GET" }).then(function (response) {
-            console.log(response);
-
-            var weatherObj = {
-                temp: response.main.temp,
-                desc: response.weather[0].description,
+        navigator.geolocation.getCurrentPosition((position) => {
+            pos = {
+                lat: position.coords.latitude,
+                lng: position.coords.longitude,
             };
-            drawCurWeather(weatherObj);
+            map = new google.maps.Map(document.getElementById("map"), {
+                center: pos,
+                zoom: 15,
+            });
+            bounds.extend(pos);
+
+            infoWindow.setPosition(pos);
+            infoWindow.setContent("Current Location");
+            infoWindow.open(map);
+            map.setCenter(pos);
+
+            var queryURL =
+                "https://api.openweathermap.org/data/2.5/weather?lat=" +
+                pos.lat +
+                "&lon=" +
+                pos.lng +
+                "&appid=a076bb4dbcd9082faae450a5cea191f6";
+
+            console.log(queryURL);
+
+            function go() {
+                $.ajax({ url: queryURL, method: "GET" }).then(function (response) {
+                    console.log(response);
+
+                    var weatherObj = {
+                        temp: response.main.temp,
+                        desc: response.weather[0].description,
+                    };
+                    drawCurWeather(weatherObj);
+                });
+            }
+
+            function drawCurWeather(weather) {
+                console.log(weather);
+
+                var realTemp = Math.floor((weather.temp * 9) / 5 - 459.67);
+
+                $("#temp").text("Temp: " + realTemp + " F");
+                $("#conditions").text("Current Conditions: " + weather.desc);
+            }
+
+            go();
         });
     }
 
-    function drawCurWeather(weather) {
-        console.log(weather);
-
-        var realTemp = Math.floor((weather.temp * 9) / 5 - 459.67);
-
-        $("#temp").text("Temp: " + realTemp + " F");
-        $("#conditions").text("Current Conditions: " + weather.desc);
-    }
-
-    go();
-
-    document.getElementById("clickbars").addEventListener("click", function () {
-
+    document.getElementById("clickbars").addEventListener(
+        "click",
+        function () {
             // Call Places Nearby Search on user's location
             getNearbyPlaces(pos);
         },
@@ -78,9 +81,9 @@ function initMap() {
         }
     );
 
-
-    document.getElementById("clickart").addEventListener("click", function () {
-
+    document.getElementById("clickart").addEventListener(
+        "click",
+        function () {
             // Call Places Nearby Search on user's location
             getNearbyPlaces2(pos);
         },
@@ -96,7 +99,7 @@ function handleLocationError(browserHasGeolocation, infoWindow) {
     // Set default location to Sydney, Australia
     pos = {
         lat: -33.856,
-        lng: 151.215
+        lng: 151.215,
     };
     map = new google.maps.Map(document.getElementById("map"), {
         center: pos,
@@ -106,9 +109,9 @@ function handleLocationError(browserHasGeolocation, infoWindow) {
     // Display an InfoWindow at the map center
     infoWindow.setPosition(pos);
     infoWindow.setContent(
-        browserHasGeolocation ?
-        "Geolocation permissions denied. Using default location." :
-        "Error: Your browser doesn't support geolocation."
+        browserHasGeolocation
+            ? "Geolocation permissions denied. Using default location."
+            : "Error: Your browser doesn't support geolocation."
     );
     infoWindow.open(map);
     currentInfoWindow = infoWindow;
@@ -169,14 +172,7 @@ function createMarkers(places) {
         google.maps.event.addListener(marker, "click", () => {
             let request = {
                 placeId: place.place_id,
-                fields: [
-                    "name",
-                    "formatted_address",
-                    "geometry",
-                    "rating",
-                    "website",
-                    "photos",
-                ],
+                fields: ["name", "formatted_address", "geometry", "rating", "website", "photos"],
             };
 
             /* Only fetch the details of a place when the user clicks on a marker.
@@ -195,7 +191,6 @@ function createMarkers(places) {
     map.fitBounds(bounds);
 }
 
-
 function createMarkers2(places) {
     var iconBase = "https://maps.google.com/mapfiles/kml/shapes/";
     places.forEach((place) => {
@@ -211,14 +206,7 @@ function createMarkers2(places) {
         google.maps.event.addListener(marker, "click", () => {
             let request = {
                 placeId: place.place_id,
-                fields: [
-                    "name",
-                    "formatted_address",
-                    "geometry",
-                    "rating",
-                    "website",
-                    "photos",
-                ],
+                fields: ["name", "formatted_address", "geometry", "rating", "website", "photos"],
             };
 
             /* Only fetch the details of a place when the user clicks on a marker.
@@ -245,12 +233,7 @@ function showDetails(placeResult, marker, status) {
         let rating = "None";
         if (placeResult.rating) rating = placeResult.rating;
         placeInfowindow.setContent(
-            "<div><strong>" +
-            placeResult.name +
-            "</strong><br>" +
-            "Rating: " +
-            rating +
-            "</div>"
+            "<div><strong>" + placeResult.name + "</strong><br>" + "Rating: " + rating + "</div>"
         );
         placeInfowindow.open(marker.map, marker);
         currentInfoWindow.close();
