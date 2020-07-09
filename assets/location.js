@@ -44,7 +44,7 @@ function initMap() {
 
             console.log(queryURL);
 
-            function go() {
+            function getCurWeather() {
                 $.ajax({ url: queryURL, method: "GET" }).then(function (response) {
                     console.log(response);
 
@@ -61,11 +61,11 @@ function initMap() {
 
                 var realTemp = Math.floor((weather.temp * 9) / 5 - 459.67);
 
-                $("#temp").text("Temp: " + realTemp + " F");
-                $("#conditions").text("Current Conditions: " + weather.desc);
+                $("#temp").text("Current Temperature - " + realTemp + " F");
+                $("#conditions").text("Current Conditions - " + weather.desc);
             }
 
-            go();
+            getCurWeather();
         });
     }
 
