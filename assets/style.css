@@ -1,90 +1,22 @@
 * {
-	font-family: "Playfair Display", serif;
-	box-sizing: border-box;
+  font-family: "Playfair Display", serif;
+  box-sizing: border-box;
 }
 
 html {
-	height: 0;
-	background: url(img/beer-s-dew-1189815.jpg) no-repeat center center
-		fixed;
-	background-size: cover;
-	z-index: -999;
+  height: 0;
+  background: url(img/beer-s-dew-1189815.jpg) no-repeat center center fixed;
+  background-size: cover;
+  z-index: -999;
 }
 body {
-	padding: 0;
-	position: relative;
-	line-height: normal;
+  padding: 0;
+  position: relative;
+  line-height: normal;
 }
 
-.ribbon-wrapper {
-	background-color: #2199e8;
-	position: relative;
-	z-index: 1;
-	padding: 5px;
-	margin: 0;
-}
-
-h1.post-title {
-	visibility: hidden;
-	width: 0;
-	height: 0;
-}
-
-.ribbon {
-	width: 80%;
-	position: relative;
-	background: #f35b5b;
-	color: #fff;
-	text-align: center;
-	padding: 1em 2em;
-	margin: 2em auto 3em;
-	font-family: "Bangers", cursive;
-}
-
-.ribbon:after,
-.ribbon:before {
-	content: "";
-	position: absolute;
-	display: block;
-	bottom: -1em;
-	border: 1.5em solid #d74545;
-	z-index: -1;
-}
-
-.ribbon:before {
-	left: -2em;
-	border-right-width: 1.5em;
-	border-left-color: transparent;
-}
-
-.ribbon:after {
-	right: -2em;
-	border-left-width: 1.5em;
-	border-right-color: transparent;
-}
-
-.ribbon .ribbon-inner:after,
-.ribbon .ribbon-inner:before {
-	content: "";
-	position: absolute;
-	display: block;
-	border-style: solid;
-	border-color: #b23232 transparent transparent;
-	bottom: -1em;
-}
-
-.ribbon .ribbon-inner:before {
-	left: 0;
-	border-width: 1em 0 0 1em;
-}
-
-.ribbon .ribbon-inner:after {
-	right: 0;
-	border-width: 1em 1em 0 0;
-}
-
-.lead {
-	color: #2199e8;
+p {
+  color: #444;
 }
 
 .callout {
@@ -92,56 +24,83 @@ h1.post-title {
 }
 
 section {
-	background-color: #2199e8;
-	margin: 20px;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	border-radius: 2rem;
+  background-color: #ffbf00;
+  margin: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 2rem;
 }
 
 .row {
-	margin: auto;
+  margin: auto;
 }
 
 .medium-6 {
-	color: white;
+  color: white;
 }
 
-h2 {
-	text-align: center;
-	font-family: "Bangers";
-	color: white;
-	text-shadow: 2px 2px 4px #000000;
+h1 {
+  text-align: center;
+  font-size: 100px;
+  font-family: "Bangers";
+  color: white;
+  text-shadow: 4px 4px 8px #444;
 }
 
-#map {
-	height: 400px;
-	width: 100%;
-	border: 1px solid black;
-	color: black;
-}
-
-#mbutton {
-	color: red;
-}
-
-.row.column {
-	color: white;
-	margin: auto;
+.lead {
+  color: white;
+  font-weight: bold;
+  font-size: 200%;
 }
 
 .button {
-	border-radius: 5rem;
+  border-radius: 5rem;
 }
 
-#muralBtn {
-	background-color: #444;
+#clickart {
+  background-color: #444;
 }
+
+#clickbars {
+  color: #444;
+  border-color: #444;
+  background-color: white;
+}
+
+h2 {
+  text-align: center;
+  font-family: "Bangers";
+  color: white;
+  text-shadow: 2px 2px 4px #444;
+}
+
+#weather,
+#temp,
+#conditions {
+  color: #444;
+}
+
+#map {
+  height: 400px;
+  width: 100%;
+  border: 1px solid black;
+  color: black;
+}
+
+#mbutton {
+  color: red;
+}
+
+.row.column {
+  color: white;
+  margin: auto;
+}
+
 #muralpc {
-	width: 100%;
-	display: none;
+  width: 100%;
+  display: none;
 }
 
 #txtt {
-	font-family: "Bangers";
+  font-family: "Bangers";
 }
