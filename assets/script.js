@@ -2,6 +2,8 @@ var image_track = "f";
 
 $(document).ready(function () {
 	$("#flip").click(function () {
+		document.getElementById("flip").innerHTML =
+			"Click on image to scroll";
 		$("#muralpc").slideDown("slow");
 	});
 });
