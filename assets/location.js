@@ -50,6 +50,7 @@ function initMap() {
 
                     var weatherObj = {
                         temp: response.main.temp,
+                        img: response.weather[0].icon,
                         desc: response.weather[0].description,
                     };
                     drawCurWeather(weatherObj);
@@ -60,11 +61,47 @@ function initMap() {
                 console.log(weather);
 
                 var realTemp = Math.floor((weather.temp * 9) / 5 - 459.67);
-
+                var img = "http://openweathermap.org/img/wn/" + weather.img + ".png";
                 var desc = weather.desc[0].toUpperCase() + weather.desc.slice(1).toLowerCase();
+                console.log(img);
 
-                $("#temp").text("Current Temperature - " + realTemp + " F");
-                $("#conditions").text("Current Conditions - " + desc);
+                let $tempP = $("<p> Current Temperature - " + realTemp + " &#8457;</p>");
+                $("#temp").append($tempP);
+
+                let $iconLi = $("<p>  Current Conditions </p>");
+                let $iconI = $("<img>");
+                $iconI.attr("src", img);
+
+                $iconLi.append($iconI);
+                $("#conditions").append($iconLi);
+
+                // if (realTemp <= 85 && realTemp >= 60 && desc == "clear sky") {
+                //     $("#advice").text(
+                //         "Should I venture out on foot? - Sure! The weather is perfect"
+                //     );
+                // } else if (
+                //     (realTemp <= 85 && realTemp >= 60) ||
+                //     desc == "few clouds" ||
+                //     desc == "scattered clouds"
+                // ) {
+                //     $("#advice").text(
+                //         "Should I venture out on foot? - Sure!! There are only a few clouds"
+                //     );
+                // } else if (realTemp <= 85 && realTemp >= 60 && desc == "rain") {
+                //     $("#advice").text(
+                //         "Should I venture out on foot? - Sure, but bring an umbrella"
+                //     );
+                // } else if (realTemp >= 45) {
+                //     $("#advice").text("Should I venture out on foot? - Yes, but bring a jacket");
+                // } else if (realTemp >= 86) {
+                //     $("#advice").text(
+                //         "Should I venture out on foot? - No, It is too hot. Venture by car"
+                //     );
+                // } else if (realTemp <= 45) {
+                //     $("#advice").text("Should I venture out on foot? - Yes, but bring a jacket");
+                // } else {
+                //     $("#advice").text("Should I venture out on foot? - No. Venture by car");
+                // }
             }
 
             getCurWeather();
