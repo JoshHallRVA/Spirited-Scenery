@@ -23,9 +23,12 @@ WHEN view the Current Weather Section
 THEN I see the current weather for my area
 WHEN I click the Click on Me to Scroll through Murals
 THEN a image drops down and I can click through more images
+WHEN I open the website on a table or phone
+THEN The CSS is repsonsive
 ```
 
-##Screenshots
+## Screenshots
+
 ![image](https://user-images.githubusercontent.com/63308516/87229085-4e44ab80-c373-11ea-8b3f-2c25cd71b60a.png)
 
 
