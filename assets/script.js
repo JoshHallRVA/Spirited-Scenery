@@ -3,6 +3,7 @@ var image_track = "f";
 $(document).ready(function () {
 	$("#flip").click(function () {
 		$("#muralpc").slideDown("slow");
+		$("#flip").html("Click on image to see more!");
 	});
 });
 
