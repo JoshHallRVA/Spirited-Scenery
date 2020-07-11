@@ -15,6 +15,12 @@ body {
   line-height: normal;
 }
 
+@media screen and (max-width: 600px) {
+  .title {
+    font-size: 50px;
+  }
+}
+
 p {
   text-align: center;
   font-family: "Bangers";
