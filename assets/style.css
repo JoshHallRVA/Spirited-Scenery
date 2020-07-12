@@ -1,18 +1,19 @@
 * {
-    font-family: "Playfair Display", serif;
-    box-sizing: border-box;
+	font-family: "Playfair Display", serif;
+	box-sizing: border-box;
 }
 
 html {
-    height: 0;
-    background: url(img/beer-s-dew-1189815.jpg) no-repeat center center fixed;
-    background-size: cover;
-    z-index: -999;
+	height: 0;
+	background: url(img/beer-s-dew-1189815.jpg) no-repeat center center
+		fixed;
+	background-size: cover;
+	z-index: -999;
 }
 body {
-    padding: 0;
-    position: relative;
-    line-height: normal;
+	padding: 0;
+	position: relative;
+	line-height: normal;
 }
 
 @media screen and (max-width: 600px) {
@@ -22,94 +23,324 @@ body {
 }
 
 p {
-    text-align: center;
-    font-family: "Bangers";
-    color: #444;
-    text-shadow: 2px 2px 4px white;
-    font-size: 150%;
+	text-align: center;
+	font-family: "Bangers";
+	color: #444;
+	text-shadow: 2px 2px 4px white;
+	font-size: 150%;
 }
 
 .callout {
-    margin: auto;
+	margin: auto;
 }
 
 section {
-    background-color: #ffbf00;
-    margin: 20px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-radius: 2rem;
+	background-color: #ffbf00;
+	margin: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-radius: 2rem;
 }
 
 .row {
-    margin: auto;
+	margin: auto;
 }
 
 .medium-6 {
-    color: white;
+	color: white;
 }
 
 h1 {
-    text-align: center;
-    font-size: 100px;
-    font-family: "Bangers";
-    color: white;
-    text-shadow: 4px 4px 8px #444;
+	text-align: center;
+	font-size: 100px;
+	font-family: "Bangers";
+	color: white;
+	text-shadow: 4px 4px 8px #444;
 }
 
 .button {
-    border-radius: 5rem;
+	border-radius: 5rem;
 }
 
 #clickart {
-    background-color: #444;
-    font-family: "Bangers";
+	background-color: #444;
+	font-family: "Bangers";
 }
 
 #clickbars {
-    color: #444;
-    border-color: #444;
-    background-color: white;
-    font-family: "Bangers";
+	color: #444;
+	border-color: #444;
+	background-color: white;
+	font-family: "Bangers";
 }
 
 h2 {
-    text-align: center;
-    font-family: "Bangers";
-    color: white;
-    text-shadow: 2px 2px 4px #444;
+	text-align: center;
+	font-family: "Bangers";
+	color: white;
+	text-shadow: 2px 2px 4px #444;
 }
 
 #temp,
 #conditions {
-    text-align: center;
-    font-family: "Bangers";
-    color: #444;
-    text-shadow: 2px 2px 4px white;
-    font-size: 150%;
+	text-align: center;
+	font-family: "Bangers";
+	color: #444;
+	text-shadow: 2px 2px 4px white;
+	font-size: 150%;
 }
 
 #map {
-    height: 400px;
-    width: 100%;
-    border: 1px solid black;
-    color: black;
+	height: 400px;
+	width: 100%;
+	border: 1px solid black;
+	color: black;
 }
 
 #mbutton {
-    color: red;
+	color: red;
 }
 
 .row.column {
-    color: white;
-    margin: auto;
+	color: white;
+	margin: auto;
 }
 
 #muralpc {
-    width: 100%;
-    display: none;
+	width: 100%;
+	display: none;
 }
 
 #txtt {
-    font-family: "Bangers";
+	font-family: "Bangers";
+}
+
+/*=== Trigger  ===*/
+.animate {
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+}
+
+/*===  Delays,  ===*/
+.one {
+	-webkit-animation-delay: 0.5s;
+	-moz-animation-delay: 0.5s;
+	animation-delay: 0.5s;
+}
+
+.two {
+	-webkit-animation-delay: 1.5s;
+	-moz-animation-delay: 1.5s;
+	animation-delay: 1.5s;
+}
+
+.three {
+	-webkit-animation-delay: 2.5s;
+	-moz-animation-delay: 2.5s;
+	animation-delay: 2.5s;
+}
+
+.four {
+	-webkit-animation-delay: 3.5s;
+	-moz-animation-delay: 3.5s;
+	animation-delay: 3.5s;
+}
+
+.five {
+	-webkit-animation-delay: 4.5s;
+	-moz-animation-delay: 4.5s;
+	animation-delay: 4.5s;
+}
+
+.six {
+	-webkit-animation-delay: 5.5s;
+	-moz-animation-delay: 5.5s;
+	animation-delay: 5.5s;
+}
+
+/*=== Animations start here  ===*/
+
+/*==== FADE IN UP ===*/
+@-webkit-keyframes fadeInUp {
+	from {
+		opacity: 0;
+		-webkit-transform: translate3d(0, 100%, 0);
+		transform: translate3d(0, 100%, 0);
+	}
+
+	to {
+		opacity: 1;
+		-webkit-transform: none;
+		transform: none;
+	}
+}
+@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		-webkit-transform: translate3d(0, 100%, 0);
+		transform: translate3d(0, 100%, 0);
+	}
+
+	to {
+		opacity: 1;
+		-webkit-transform: none;
+		transform: none;
+	}
+}
+
+.fadeInUp {
+	-webkit-animation-name: fadeInUp;
+	animation-name: fadeInUp;
+}
+
+/*=== FADE IN DOWN ===*/
+.fadeInDown {
+	-webkit-animation-name: fadeInDown;
+	animation-name: fadeInDown;
+}
+@-webkit-keyframes fadeInDown {
+	0% {
+		opacity: 0;
+		-webkit-transform: translate3d(0, -100%, 0);
+		transform: translate3d(0, -100%, 0);
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: none;
+		transform: none;
+	}
+}
+@keyframes fadeInDown {
+	0% {
+		opacity: 0;
+		-webkit-transform: translate3d(0, -100%, 0);
+		transform: translate3d(0, -100%, 0);
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: none;
+		transform: none;
+	}
+}
+
+/*=== FADE IN LEFT ===*/
+@-webkit-keyframes fadeInLeft {
+	from {
+		opacity: 0;
+		-webkit-transform: translate3d(-100%, 0, 0);
+		transform: translate3d(-100%, 0, 0);
+	}
+
+	to {
+		opacity: 1;
+		-webkit-transform: none;
+		transform: none;
+	}
+}
+@keyframes fadeInLeft {
+	from {
+		opacity: 0;
+		-webkit-transform: translate3d(-100%, 0, 0);
+		transform: translate3d(-100%, 0, 0);
+	}
+
+	to {
+		opacity: 1;
+		-webkit-transform: none;
+		transform: none;
+	}
+}
+
+.fadeInLeft {
+	-webkit-animation-name: fadeInLeft;
+	animation-name: fadeInLeft;
+}
+
+/*==== FADE IN RIGHT ===*/
+@-webkit-keyframes fadeInRight {
+	from {
+		opacity: 0;
+		-webkit-transform: translate3d(100%, 0, 0);
+		transform: translate3d(100%, 0, 0);
+	}
+
+	to {
+		opacity: 1;
+		-webkit-transform: none;
+		transform: none;
+	}
+}
+@keyframes fadeInRight {
+	from {
+		opacity: 0;
+		-webkit-transform: translate3d(100%, 0, 0);
+		transform: translate3d(100%, 0, 0);
+	}
+
+	to {
+		opacity: 1;
+		-webkit-transform: none;
+		transform: none;
+	}
+}
+
+.fadeInRight {
+	-webkit-animation-name: fadeInRight;
+	animation-name: fadeInRight;
+}
+
+/*=== FADE IN  ===*/
+@-webkit-keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+.fadeIn {
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn;
+}
+
+/*=== FADE IN UP Big ===*/
+.fadeInUpBig {
+	-webkit-animation-name: fadeInUpBig;
+	animation-name: fadeInUpBig;
+}
+@-webkit-keyframes fadeInUpBig {
+	0% {
+		opacity: 0;
+		-webkit-transform: translate3d(0, 2000px, 0);
+		transform: translate3d(0, 2000px, 0);
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: none;
+		transform: none;
+	}
+}
+@keyframes fadeInUpBig {
+	0% {
+		opacity: 0;
+		-webkit-transform: translate3d(0, 2000px, 0);
+		transform: translate3d(0, 2000px, 0);
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: none;
+		transform: none;
+	}
 }
